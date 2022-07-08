@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ImageSchema = mongoose.Schema({
+const MediaSchema = mongoose.Schema({
 
     medias: [
         {
@@ -42,4 +42,4 @@ const ImageSchema = mongoose.Schema({
     // }
 })
 
-module.exports = ImageModel = mongoose.model('ImageModel',ImageSchema)
+module.exports = MediaModel = mongoose.model('MediaModel',MediaSchema)

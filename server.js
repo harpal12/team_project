@@ -5,8 +5,10 @@ const bodyParser= require("body-parser")
 dotenv.config();
 const cors = require('cors');
 const app  = express();
+const URI = process.env.MONGODB_URI;
+//const URI = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.5.0"
 
-
+//const DB_NAME =process.env.DB_NAME;
 //const path = require("path");
 //const mediaRoutes = require("./routes/media");
 app.use(bodyParser.json());
@@ -20,7 +22,7 @@ app.use(cors());
 //const mongodbUri = 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.5.0';
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/uploadproject');
+mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true});
 
 // mongoose.connect(mongodbUri,{
 //     userNewUrlParser:true,
